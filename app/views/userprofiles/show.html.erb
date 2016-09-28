@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Userprofile #<%= @userprofile.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Firstname</dt>
+      <dd><%= @userprofile.firstname %></dd>
+
+      <dt>Lastinitial</dt>
+      <dd><%= @userprofile.lastinitial %></dd>
+
+      <dt>Avg rating given</dt>
+      <dd><%= @userprofile.avg_rating_given %></dd>
+
+      <dt>Review</dt>
+      <dd><%= @userprofile.review_id %></dd>
+
+      <dt>User</dt>
+      <dd><%= @userprofile.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/userprofiles" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/userprofiles/<%= @userprofile.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_userprofile/<%= @userprofile.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

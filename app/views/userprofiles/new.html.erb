@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @userprofile.errors.any? %>
+  <% @userprofile.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Userprofile</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_userprofile" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for firstname -->
+      <div class="form-group">
+        <label for="firstname" class="control-label">
+          Firstname
+        </label>
+
+        <input type="text" id="firstname" name="firstname" placeholder="Firstname" class="form-control" value="<%= @userprofile.firstname %>">
+      </div>
+
+      <!-- Label and input for lastinitial -->
+      <div class="form-group">
+        <label for="lastinitial" class="control-label">
+          Lastinitial
+        </label>
+
+        <input type="text" id="lastinitial" name="lastinitial" placeholder="Lastinitial" class="form-control" value="<%= @userprofile.lastinitial %>">
+      </div>
+
+      <!-- Label and input for avg_rating_given -->
+      <div class="form-group">
+        <label for="avg_rating_given" class="control-label">
+          Avg rating given
+        </label>
+
+        <input type="text" id="avg_rating_given" name="avg_rating_given" placeholder="Avg rating given" class="form-control" value="<%= @userprofile.avg_rating_given %>">
+      </div>
+
+      <!-- Label and input for review_id -->
+      <div class="form-group">
+        <label for="review_id" class="control-label">
+          Review
+        </label>
+
+        <input type="text" id="review_id" name="review_id" placeholder="Review" class="form-control" value="<%= @userprofile.review_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @userprofile.user_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Userprofile
+      </button>
+      or
+      <a href="/userprofiles">Cancel</a>
+    </form>
+  </div>
+</div>
