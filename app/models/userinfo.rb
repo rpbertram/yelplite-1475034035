@@ -1,6 +1,9 @@
 class Userinfo < ApplicationRecord
   # Direct associations
 
+  has_one    :userprofile,
+             :foreign_key => "user_id"
+
   has_many   :reviews,
              :foreign_key => "user_id",
              :dependent => :destroy
