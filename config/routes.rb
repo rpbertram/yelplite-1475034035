@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "restaurants#index"
   # Routes for the Userprofile resource:
   # CREATE
   get "/userprofiles/new", :controller => "userprofiles", :action => "new"
